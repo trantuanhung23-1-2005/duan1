@@ -17,6 +17,7 @@ if($role == "user"){
   }
 }else{
   switch ($act) {
+    //http://localhost/duan1hoclai/?role=admin
     case '':{
       $homeAdminController = new HomeAdminController();
       $homeAdminController->homeAdmin();
