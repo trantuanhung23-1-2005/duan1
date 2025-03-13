@@ -17,7 +17,7 @@
     <meta name="description" content="Carrot - Multipurpose eCommerce HTML Template.">
     <meta name="author" content="ashishmaraviya">
 
-    <title>Carrot - Multipurpose eCommerce HTML Template</title>
+    <title>Healthy</title>
 
     <!-- App favicon -->
     <link rel="shortcut icon" href="assets/User/img/logo/favicon.png">

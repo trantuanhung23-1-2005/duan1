@@ -40,10 +40,7 @@
                                     </ul>
                                 </li>
                             </ul>
-                            <a href="wishlist.html" class="cr-right-bar-item">
-                                <i class="ri-heart-3-line"></i>
-                                <span>Wishlist</span>
-                            </a>
+                            
                             <a href="javascript:void(0)" class="cr-right-bar-item Shopping-toggle">
                                 <i class="ri-shopping-cart-line"></i>
                                 <span>Cart</span>
@@ -354,56 +351,8 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="javascript:void(0)">
-                                        Blog
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <a class="dropdown-item" href="blog-left-sidebar.html">Left
-                                                Sidebar</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="blog-right-sidebar.html">Right
-                                                Sidebar</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="blog-full-width.html">Full
-                                                Width</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="blog-detail-left-sidebar.html">Detail
-                                                Left
-                                                Sidebar</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="blog-detail-right-sidebar.html">Detail
-                                                Right
-                                                Sidebar</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="blog-detail-full-width.html">Detail
-                                                Full
-                                                Width</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="javascript:void(0)">
-                                        Elements
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <a class="dropdown-item" href="elements-products.html">Products</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="elements-typography.html">Typography</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="elements-buttons.html">Buttons</a>
-                                        </li>
-                                    </ul>
-                                </li>
+                                
+                                
                             </ul>
                         </div>
                     </nav>

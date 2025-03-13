@@ -7,7 +7,6 @@
                             <img src="assets/User/img/logo/logo.png" alt="logo" class="logo">
                             <img src="assets/User/img/logo/dark-logo.png" alt="logo" class="dark-logo">
                         </div>
-                        <p>Carrot is the biggest market of grocery products. Get your daily needs from our store.</p>
                     </div>
                     <div class="cr-footer">
                         <h4 class="cr-sub-title cr-title-hidden">
@@ -16,10 +15,10 @@
                         </h4>
                         <ul class="cr-footer-links cr-footer-dropdown">
                             <li class="location-icon">
-                                51 Green St.Huntington ohaio beach ontario, NY 11746 KY 4783, USA.
+                                FPOLY Trịnh Văn Bô
                             </li>
                             <li class="mail-icon">
-                                <a href="javascript:void(0)">example@email.com</a>
+                                <a href="javascript:void(0)">123@gmail.com</a>
                             </li>
                             <li class="phone-icon">
                                 <a href="javascript:void(0)"> +91 123 4567890</a>
