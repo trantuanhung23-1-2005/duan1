@@ -16,5 +16,6 @@ include 'app/Controllers/Admin/HomeAdminController.php';
 const BASE_URL = "http://localhost/duan1hoclai/";
 
 //Router
-include 'router/routerMain.php';
+include 'router/routerHung52525.php';
+include 'router/routerHugn7125.php';
 ?>
