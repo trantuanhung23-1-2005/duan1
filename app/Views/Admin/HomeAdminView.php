@@ -174,8 +174,8 @@
 								<i class="ri-dashboard-3-line"></i><span class="condense">Dashboard<i
 										class="drop-arrow ri-arrow-down-s-line"></i></span></a>
 							<ul class="cr-sb-drop condense">
-								<li><a href="index.html" class="cr-page-link drop"><i
-									class="ri-checkbox-blank-circle-line"></i>ecommerce</a></li>
+								<li><a href="?role=admin&act=listCategories" class="cr-page-link drop"><i
+									class="ri-checkbox-blank-circle-line"></i>Categories</a></li>
 								<li><a href="product-list.html" class="cr-page-link drop"><i
 											class="ri-checkbox-blank-circle-line"></i>Product list</a></li>
 								<li><a href="add-product.html" class="cr-page-link drop"><i
@@ -188,11 +188,11 @@
 											class="ri-checkbox-blank-circle-line"></i>Order List</a></li>
 								<li class="cr-sb-item sb-subdrop-item">
 									<a href="javascript:void(0)" class="cr-sub-drop-toggle">
-										<i class="ri-shield-user-line"></i><span class="condense">Vendor<i
+										<i class="ri-shield-user-line"></i><span class="condense">Category<i
 												class="drop-arrow ri-arrow-down-s-line"></i></span></a>
 									<ul class="cr-sb-subdrop condense">
 										<li><a href="vendor-profile.html" class="cr-page-link subdrop"><i
-													class="ri-checkbox-blank-circle-line"></i>Profile</a></li>
+													class="ri-checkbox-blank-circle-line"></i>List Categories</a></li>
 										<li><a href="vendor-update.html" class="cr-page-link subdrop"><i
 													class="ri-checkbox-blank-circle-line"></i>Vendor Update</a></li>
 										<li><a href="vendor-list.html" class="cr-page-link subdrop"><i
