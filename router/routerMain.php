@@ -18,9 +18,41 @@ if($role == "user"){
 }else{
   switch ($act) {
     //http://localhost/duan1hoclai/?role=admin
-    case '':{
+    case 'home':{
       $homeAdminController = new HomeAdminController();
       $homeAdminController->homeAdmin();
+      break;
+    }
+    case 'list-product':{
+      $homeAdminController = new HomeAdminController();
+      $homeAdminController->productAdmin();
+      break;
+    }
+    case 'delete-product':{
+      $homeAdminController = new HomeAdminController();
+      $homeAdminController->deleteProduct();
+      break;
+    }
+    //lấy category
+    case 'add-product':{
+      $addProduct = new HomeAdminController();
+      $addProduct->addProduct();
+      break;
+    }
+    //thêm sản phẩm
+    case 'add-post-product':{
+      $addProduct = new HomeAdminController();
+      $addProduct->addPostProduct();
+      break;
+    }
+    case 'edit-product':{
+      $addProduct = new HomeAdminController();
+      $addProduct->editProduct();
+      break;
+    }
+    case 'edit-post-product':{
+      $addProduct = new HomeAdminController();
+      $addProduct->editPostProduct();
       break;
     }
     default:

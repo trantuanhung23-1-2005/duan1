@@ -1,8 +1,10 @@
 <?php
 session_start();
 //Database
+include 'app/Database/database.php';
 
 //Models
+include 'app/Models/Admin/ProductModelAdmin.php';
 
 
 //Controllers
