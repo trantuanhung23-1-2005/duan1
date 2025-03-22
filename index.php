@@ -6,6 +6,7 @@ include 'app/Database/database.php';
 //Models
 include 'app/Models/Admin/ProductModelAdmin.php';
 include 'app/Models/Admin/CategoryModel.php';
+include 'app/Models/User/DashboardUser.php';
 
 
 //Controllers
@@ -18,6 +19,5 @@ include 'app/Controllers/Admin/CategoryController.php';
 const BASE_URL = "http://localhost/duan1hoclai/";
 
 //Router
-include 'router/routerHung52525.php';
-include 'router/routerHugn7125.php';
+include 'router/routerMain.php';
 ?>

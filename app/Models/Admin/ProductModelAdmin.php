@@ -28,13 +28,13 @@ class ProductModelAdmin{
     $result = $query->fetchAll();
     return $result;
   }
-  public function addProductToDB(){
+  public function addProductToDB($destPath){
         $name = $_POST['name'];
         $category_id = $_POST['category_id'];
         $price = $_POST['price'];
         $stock = $_POST['stock'];
         $description = $_POST['description'];
-        $image = $_POST['image'];
+        $imageDes = $destPath;
         $sql = "INSERT INTO `products`(`name`, `category_id`, `description`, `price`, `stock`, `image`) 
         VALUES (:name, :category_id, :description, :price, :stock, :image)";
         $stmt = $this->db->pdo->prepare($sql);
@@ -43,7 +43,7 @@ class ProductModelAdmin{
         $stmt->bindParam(':description', $description);
         $stmt->bindParam(':price', $price);
         $stmt->bindParam(':stock', $stock);
-        $stmt->bindParam(':image', $image);
+        $stmt->bindParam(':image', $imageDes);
         if($stmt->execute()){
             //lấy id của sản phẩm mới thêm
             $lastInsertId = $this->db->pdo->lastInsertId();

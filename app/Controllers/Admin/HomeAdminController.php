@@ -33,8 +33,25 @@ class HomeAdminController{
     include 'app/Views/Admin/AddProductByAdmin.php';
   }
   public function addPostProduct(){
+    $uploadDir = 'assets/Admin/upload/'; 
+            $allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+            $destPath = "";
+            if(!empty($_FILES['image']['name'])){
+                $fileTmpPath = $_FILES['image']['tmp_name'];
+                $fileType = mime_content_type($fileTmpPath);
+                $fileName = basename($_FILES['image']['name']);
+                $fileExtension = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
+
+                $newFileName = uniqid() . '.' . $fileExtension;
+                if(in_array($fileType, $allowedTypes)){
+                    $destPath = $uploadDir . $newFileName;
+                    if(!move_uploaded_file($fileTmpPath, $destPath)){
+                        $destPath = "";
+                    }
+                }
+            }
     $productModel = new ProductModelAdmin();
-    $idProduct = $productModel->addProductToDB();
+    $idProduct = $productModel->addProductToDB($destPath);
       if(!$idProduct){
         header("Location: " . BASE_URL . "?role=admin&act=add-product");
         exit;
