@@ -11,5 +11,15 @@ class DashboardUser{
         $result = $query->fetchAll();
         return $result;
   }
+  public function getProductById($id){
+    if(isset($_GET['product_id'])){
+      $sql = "SELECT * FROM products WHERE id = :id";
+      $stmt = $this->db->pdo->prepare($sql);
+      $stmt->bindParam(':id', $_GET['product_id']);
+      $stmt->execute();
+      $result = $stmt->fetch();
+      return $result;
+  }
+}
 }
 ?>

@@ -9,6 +9,11 @@ if($role == "user"){
       $homeUserController->homeUser();
       break;
     }
+    case 'product-detail':{
+      $homeUserController = new HomeUserController();
+      $homeUserController->productDetail();
+      break;
+    }
     
     default:
       $homeUserController = new HomeUserController();
