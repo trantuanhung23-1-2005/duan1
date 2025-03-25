@@ -66,7 +66,7 @@
             </div>
             <div class="row">
                 <div class="col-12 aos-init aos-animate" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="600">
-                    
+                    <h1>Product List</h1>
                     <div class="row col-50 mb-minus-24">
                     <?php foreach($list as $key => $value) : ?>
                         <div class="col-lg-3 col-6 cr-product-box mb-24">
@@ -89,7 +89,7 @@
                                 </div>
                                 <div class="cr-product-details">
                                     <div class="cr-brand">
-                                        <a href="shop-left-sidebar.html">Vegetables</a>
+                                        <a href="<?=BASE_URL?>?act=product-detail&product_id=<?=$value->id?>"><?= $value->name ?></a>
                                         <div class="cr-star">
                                             <i class="ri-star-fill"></i>
                                             <i class="ri-star-fill"></i>
@@ -99,15 +99,10 @@
                                             <p>(4.5)</p>
                                         </div>
                                     </div>
-                                    <a href="product-left-sidebar.html" class="title">Fresh organic villa farm lomon
-                                        500gm pack</a>
-                                    <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                        eiusmod tempor incididunt
-                                        ut labore lacus vel facilisis.</p>
-                                    <p class="cr-price"><span class="new-price">$120.25</span> <span class="old-price">$123.25</span></p>
+                                    <a href="" class="title"><?=$value->description?></a>
+                                    <p class="cr-price"><span class="new-price"><?= $value->price ?>đ</span></p>
                                 </div>
-                            </div>
-                            
+                            </div> 
                         </div>
                         <?php endforeach;?>
                     </div>

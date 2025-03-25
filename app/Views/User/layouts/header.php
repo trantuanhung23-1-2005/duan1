@@ -87,7 +87,7 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="index.html">
+                                    <a class="nav-link" href="<?=BASE_URL?>?act=''">
                                         Home
                                     </a>
                                 </li>

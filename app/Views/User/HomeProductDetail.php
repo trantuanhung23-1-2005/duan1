@@ -92,16 +92,19 @@
                         <div class="cr-product-price">
                             <span class="new-price"><?=$productDetailList->price?></span>
                         </div>
-                        <div class="cr-add-card">
-                            <div class="cr-qty-main">
-                                <input type="text" placeholder="." value="1" minlength="1" maxlength="20" class="quantity">
-                                <button type="button" class="plus">+</button>
-                                <button type="button" class="minus">-</button>
+                        <form method="POST" action="index.php?action=addToCart">
+                            <div class="cr-add-card">
+                                <div class="cr-qty-main">
+                                    <button type="submit" name="action" value="decrease" class="minus">-</button>
+                                    <input type="text" name="quantity" value="<?= isset($_POST['quantity']) ? $_POST['quantity'] : 1 ?>" minlength="1" class="quantity">
+                                    <button type="submit" name="action" value="increase" class="plus">+</button>
+                                </div>
+                                <div class="cr-add-button">
+                                    <button type="submit" name="action" value="add">Add to cart</button>
+                                </div>
                             </div>
-                            <div class="cr-add-button">
-                                <button type="button" class="cr-button cr-shopping-bag">Add to cart</button>
-                            </div>
-                        </div>
+                            <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
+                        </form>
                     </div>
                 </div>
             </div>
