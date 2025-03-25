@@ -51,15 +51,29 @@
     <!-- Main -->
     <section class="section-shop padding-tb-100">
         <div class="container">
-          <?php foreach($list as $key => $value):?>
+            <div class="row d-none">
+                <div class="col-lg-12">
+                    <div class="mb-30 aos-init aos-animate" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="400">
+                        <div class="cr-banner">
+                            <h2>Categories</h2>
+                        </div>
+                        <div class="cr-banner-sub-title">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut labore lacus vel facilisis. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-12 aos-init aos-animate" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="600">
+                    
                     <div class="row col-50 mb-minus-24">
-                        <div class="col-lg-3 col-12 cr-product-box mb-24">
+                    <?php foreach($list as $key => $value) : ?>
+                        <div class="col-lg-3 col-6 cr-product-box mb-24">
                             <div class="cr-product-card">
                                 <div class="cr-product-image">
                                     <div class="cr-image-inner zoom-image-hover" style="position: relative; overflow: hidden;">
-                                        <img src="<?= $value->image ?>" alt="product-1">
+                                        <img src="<?=$value->image?>" alt="product-1">
                                     <img role="presentation" alt="" src="file:///D:/xam/htdocs/baseduan1/frontend/projects/carrot/carrot-v21/carrot-html/assets/img/product/1.jpg" class="zoomImg" style="position: absolute; top: -57.6739px; left: -24.8476px; opacity: 0; width: 600px; height: 600px; border: none; max-width: none; max-height: none;"></div>
                                     <div class="cr-side-view">
                                         <a href="javascript:void(0)" class="wishlist">
@@ -93,11 +107,27 @@
                                     <p class="cr-price"><span class="new-price">$120.25</span> <span class="old-price">$123.25</span></p>
                                 </div>
                             </div>
-                        </div> 
+                            
+                        </div>
+                        <?php endforeach;?>
                     </div>
+                    <nav aria-label="..." class="cr-pagination">
+                        <ul class="pagination">
+                            <li class="page-item disabled">
+                                <span class="page-link">Previous</span>
+                            </li>
+                            <li class="page-item active" aria-current="page">
+                                <span class="page-link">1</span>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
-            <?php endforeach; ?>
         </div>
     </section>
     
