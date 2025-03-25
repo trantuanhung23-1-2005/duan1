@@ -13,6 +13,11 @@ class HomeUserController{
   }
   include 'app/Views/User/HomeProductDetail.php';  
 }
+public function productListUser(){
+  $usercontroller = new DashboardUser();
+  $list = $usercontroller -> getAllProductByUser();
+  include 'app/Views/User/HomeProductList.php'; 
+}
 }
 
 ?>

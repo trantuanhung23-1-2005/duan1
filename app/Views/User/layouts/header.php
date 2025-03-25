@@ -108,7 +108,7 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="<?= BASE_URL ?>?act=product-detail">
+                                    <a class="nav-link dropdown-toggle" href="<?= BASE_URL ?>?act=product-list-user">
                                         Products
                                     </a>
                                 </li>
