@@ -20,19 +20,8 @@
 											class="ri-checkbox-blank-circle-line"></i>Rating</a></li>
 								<li><a href="order-list.html" class="cr-page-link drop"><i
 											class="ri-checkbox-blank-circle-line"></i>Order</a></li>
-							</ul>
-						</li>
-						<li class="cr-sb-item-separator"></li>
-						<li class="cr-sb-title condense">Pages</li>
-						<li class="cr-sb-item sb-drop-item">
-							<a href="javascript:void(0)" class="cr-drop-toggle">
-								<i class="ri-pages-line"></i><span class="condense">Authentication<i
-										class="drop-arrow ri-arrow-down-s-line"></i></span></a>
-							<ul class="cr-sb-drop condense">
-								<li><a href="signin.html" class="cr-page-link drop"><i
+								<li><a href="<?= BASE_URL?>?role=admin&act=adminlist" class="cr-page-link drop"><i
 											class="ri-checkbox-blank-circle-line"></i></i>User List</a></li>
-								<li><a href="signup.html" class="cr-page-link drop"><i
-											class="ri-checkbox-blank-circle-line"></i>Add User</a></li>
 							</ul>
 						</li>
 						
