@@ -40,9 +40,9 @@
 								<i class="ri-pages-line"></i><span class="condense">Authentication<i
 										class="drop-arrow ri-arrow-down-s-line"></i></span></a>
 							<ul class="cr-sb-drop condense">
-								<li><a href="signin.html" class="cr-page-link drop"><i
+								<li><a href="<?= BASE_URL ?>?role=admin&act=list-user" class="cr-page-link drop"><i
 											class="ri-checkbox-blank-circle-line"></i></i>User List</a></li>
-								<li><a href="signup.html" class="cr-page-link drop"><i
+								<li><a href="<?= BASE_URL ?>?role=admin&act=list-add" class="cr-page-link drop"><i
 											class="ri-checkbox-blank-circle-line"></i>Add User</a></li>
 							</ul>
 						</li>

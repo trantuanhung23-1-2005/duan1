@@ -58,5 +58,8 @@
                 die("Failed to delete Category!");
             }
         }
+        public function login(){
+            include "app/Views/Admin/login.php";
+        }
     }
 ?>
