@@ -75,6 +75,37 @@ if($role == "user"){
       $categoryController->deleteCategory();
       break;
     }
+    case 'list-user':{
+      $userAdminController = new UserAdminController();
+      $userAdminController->userList();
+      break;
+    }
+    case 'list-add':{
+      $userAdminController = new UserAdminController();
+      $userAdminController->addUser();
+      break;
+    }
+    case 'list-post-add':{
+      $userAdminController = new UserAdminController();
+      $userAdminController->addPostUser();
+      break;
+    }
+    case 'list-edit':{
+      $userAdminController = new UserAdminController();
+      $userAdminController->editUser();
+      break;
+    }
+      case 'list-post-edit':{
+      $userAdminController = new UserAdminController();
+      $userAdminController->editPostUser();
+      break;
+    }
+    case 'list-delete':{
+      $userAdminController = new UserAdminController();
+      $userAdminController->deleteUser();
+      break;
+    }
+
     default:
     $homeAdminController = new HomeAdminController();
     $homeAdminController->homeAdmin();
