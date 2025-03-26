@@ -92,18 +92,18 @@
                                     </a>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="javascript:void(0)">
+                                    <a class="nav-link dropdown-toggle" href="<?=BASE_URL?>?act=category_list">
                                         Category
                                     </a>
                                     <ul class="dropdown-menu">
                                         <li>
-                                            <a class="dropdown-item" href="shop-left-sidebar.html">Vegetable</a>
+                                            <a class="dropdown-item" href="<?=BASE_URL?>?act=category_list">Vegetable</a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="shop-right-sidebar.html">Fruit</a>
+                                            <a class="dropdown-item" href="<?=BASE_URL?>?act=category_list">Fruit</a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="shop-full-width.html">Flower</a>
+                                            <a class="dropdown-item" href="<?=BASE_URL?>?act=category_list">Flower</a>
                                         </li>
                                     </ul>
                                 </li>

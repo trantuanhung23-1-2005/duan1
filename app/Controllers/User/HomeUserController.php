@@ -18,6 +18,9 @@ public function productListUser(){
   $list = $usercontroller -> getAllProductByUser();
   include 'app/Views/User/HomeProductList.php'; 
 }
+public function categoryList(){
+  include 'app/Views/User/CategoryList.php'; 
+}
 }
 
 ?>

@@ -19,6 +19,11 @@ if($role == "user"){
       $homeUserController->productListUser();
       break;
     }
+    case 'category_list':{
+      $homeUserController = new HomeUserController();
+      $homeUserController->categoryList();
+      break;
+    }
     
     default:
       $homeUserController = new HomeUserController();

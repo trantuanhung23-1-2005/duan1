@@ -138,7 +138,6 @@
                                 <div class="cr-tab-content-from">
                                     <div class="post">
                                         <div class="content">
-                                            <img src="assets/img/review/1.jpg" alt="review">
                                             <div class="details">
                                                 <span class="date">Jan 08, 2024</span>
                                                 <span class="name">Oreo Noman</span>
