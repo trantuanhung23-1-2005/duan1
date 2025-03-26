@@ -76,13 +76,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="cr-vendor-upload-detail">
-                                <!-- Kiểm tra và hiển thị thông báo lỗi -->
-                                <?php if (isset($_SESSION['message'])): ?>
-                                    <div class="alert alert-warning">
-                                        <?= $_SESSION['message']; ?>
-                                    </div>
-                                    <?php unset($_SESSION['message']); ?>
-                                <?php endif; ?>
+                               
 
                                 <form action="<?= BASE_URL ?>?role=admin&act=list-post-add" method="post" enctype="multipart/form-data" class="row g-3">
                                     <div class="col-md-6">

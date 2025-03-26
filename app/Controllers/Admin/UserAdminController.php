@@ -33,6 +33,7 @@ class UserAdminController {
             $_SESSION['message'] = "Xóa thất bại!";
         }
         
+        // Redirect to the list user screen
         header("Location: " . BASE_URL . "?role=admin&act=list-user");
         exit;
     }
@@ -141,6 +142,7 @@ class UserAdminController {
 
         if ($success) {
             $_SESSION['message'] = "Sửa thành công!";
+            // Redirect to the list user screen
             header("Location: " . BASE_URL . "?role=admin&act=list-user");
         } else {
             $_SESSION['message'] = "Sửa thất bại!";

@@ -70,6 +70,13 @@
                     <div class="col-md-12">
                         <div class="cr-card card-default product-list">
                             <div class="cr-card-content">
+                                 <!-- Kiểm tra và hiển thị thông báo lỗi -->
+                                <?php if (isset($_SESSION['message'])): ?>
+                                    <div class="alert alert-warning">
+                                        <?= $_SESSION['message']; ?>
+                                    </div>
+                                    <?php unset($_SESSION['message']); ?>
+                                <?php endif; ?>
                                         <div class="table-responsive">
                                                           <table id="product_list" class="table dataTable" style="width: 100%;">
                                                                <thead>
