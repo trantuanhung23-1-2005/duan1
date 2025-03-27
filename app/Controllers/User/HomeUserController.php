@@ -21,6 +21,29 @@ public function productListUser(){
 public function categoryList(){
   include 'app/Views/User/CategoryList.php'; 
 }
+ public function cartDetail(){
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $quantity = isset($_POST['quantity']) ? (int)$_POST['quantity'] : 1;
+
+    // Kiểm tra dữ liệu hợp lệ
+    if ($product_id) {
+        switch ($action) {
+            case "increase":
+                $quantity++;
+                break;
+            case "decrease":
+                if ($quantity > 1) {
+                    $quantity--;
+                }
+                break;
+            case "add":
+              header("Location: " . BASE_URL . "?act=cart&quantity=" . urlencode($quantity));
+              exit;
+        }
+    }
+ }
+ include 'app/Views/User/ViewCart.php';
+}
 }
 
 ?>

@@ -92,18 +92,19 @@
                         <div class="cr-product-price">
                             <span class="new-price"><?=$productDetailList->price?></span>
                         </div>
-                        <form method="POST" action="index.php?action=addToCart">
+                        <form method="GET" action="<?= BASE_URL ?>">
+                            <input type="hidden" name="act" value="cart"> <!-- Gửi act=cart -->
+                            <input type="hidden" name="product_id" value="<?= isset($_GET['product_id']) ? htmlspecialchars($_GET['product_id']) : '' ?>">
                             <div class="cr-add-card">
                                 <div class="cr-qty-main">
-                                    <button type="submit" name="action" value="decrease" class="minus">-</button>
-                                    <input type="text" name="quantity" value="<?= isset($_POST['quantity']) ? $_POST['quantity'] : 1 ?>" minlength="1" class="quantity">
-                                    <button type="submit" name="action" value="increase" class="plus">+</button>
+                                    <button type="submit" name="quantity" value="<?= (isset($_GET['quantity']) ? $_GET['quantity'] - 1 : 1) ?>"                         class="minus">-</button>
+                                    <input type="number" name="quantity" value="1" min="1" class="quantity">
+                                    <button type="submit" name="quantity" value="<?= (isset($_GET['quantity']) ? $_GET['quantity'] + 1 : 2) ?>" class="plus">                       +</button>
                                 </div>
                                 <div class="cr-add-button">
-                                    <button type="submit" name="action" value="add">Add to cart</button>
+                                    <button type="submit">Add to cart</button>
                                 </div>
                             </div>
-                            <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
                         </form>
                     </div>
                 </div>

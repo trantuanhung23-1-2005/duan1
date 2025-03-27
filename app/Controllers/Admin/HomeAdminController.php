@@ -6,7 +6,7 @@ class HomeAdminController{
   public function productAdmin(){
     $adminModel = new ProductModelAdmin();
     $listProduct = $adminModel -> getAllProduct();
-    include 'app/Views/Admin/ProductViewAdmin.php';
+    include 'app/Views/Admin/products/ProductViewAdmin.php';
 
   }
   public function deleteProduct(){
@@ -30,7 +30,7 @@ class HomeAdminController{
   public function addProduct(){
     $categoryModel = new ProductModelAdmin();
     $listCategory = $categoryModel->allCategory();
-    include 'app/Views/Admin/AddProductByAdmin.php';
+    include 'app/Views/Admin/products/AddProductByAdmin.php';
   }
   public function addPostProduct(){
     $uploadDir = 'assets/Admin/upload/'; 
@@ -66,7 +66,7 @@ class HomeAdminController{
         
     $productModel = new ProductModelAdmin();
     $product = $productModel->getProductByID();
-    include 'app/Views/Admin/EditProductByAdmin.php';
+    include 'app/Views/Admin/products/EditProductByAdmin.php';
   }
   public function editPostProduct(){
     $productModel = new ProductModelAdmin();

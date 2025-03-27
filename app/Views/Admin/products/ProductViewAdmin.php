@@ -99,7 +99,7 @@
 																					<td>
 																						
 																						<a href="<?= BASE_URL ?>?role=admin&act=edit-product&id=<?= $value->id ?>"class="btn btn-warning btn-sm">Edit</a>
-																						<a href="<?= BASE_URL ?>?role=admin&act=delete-product&id=<?= $value->id ?>" class="btn btn-danger btn-sm">Delete</a>
+																						<a href="<?= BASE_URL ?>?role=admin&act=delete-product&id=<?= $value->id ?>" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này?');">Delete</a>
 																					</td>
 																				</tr>
 																				<?php endforeach; ?>
