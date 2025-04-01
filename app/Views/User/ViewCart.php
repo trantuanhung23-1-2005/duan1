@@ -71,30 +71,31 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php foreach($cart_detail as $item): ?>
                                             <tr>
                                                 <td class="cr-cart-name">
                                                     <a href="javascript:void(0)">
-                                                        <img src="assets/img/product/1.jpg" alt="product-1" class="cr-cart-img">
-                                                        Organic Lemon
+                                                        <img src="<?= htmlspecialchars($item['image']) ?>" alt="product-1" class="cr-cart-img">
+                                                        <?= htmlspecialchars($item['name']) ?>
                                                     </a>
                                                 </td>
                                                 <td class="cr-cart-price">
-                                                    <span class="amount">$56.00</span>
+                                                    <span class="amount"><?= htmlspecialchars($item['price']) ?></span>
                                                 </td>
                                                 <td class="cr-cart-qty">
                                                     <div class="cart-qty-plus-minus">
-                                                        <button type="button" class="plus">+</button>
-                                                        <input type="text" placeholder="." value="1" minlength="1" maxlength="20" class="quantity">
-                                                        <button type="button" class="minus">-</button>
+                                                        <input type="text" placeholder="." value="<?= htmlspecialchars($item['quantity']) ?>" minlength="1" maxlength="20" class="quantity">
                                                     </div>
                                                 </td>
-                                                <td class="cr-cart-subtotal">$56.00</td>
+                                                <td class="cr-cart-subtotal"><?= number_format($item['price'] * $item['quantity']) ?></td>
                                                 <td class="cr-cart-remove">
-                                                    <a href="javascript:void(0)">
+                                                    <a href="<?= htmlspecialchars(BASE_URL . '?act=cart-delete&product_id=' . urlencode($item['product_id'] ?? '')) ?>" 
+                                                    onclick="return confirm('Bạn có chắc muốn xóa sản phẩm này?');">
                                                         <i class="ri-delete-bin-line"></i>
                                                     </a>
                                                 </td>
                                             </tr>
+                                            <?php endforeach; ?>
                                         </tbody>
                                     </table>
                                 </div>

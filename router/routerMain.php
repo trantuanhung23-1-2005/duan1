@@ -30,6 +30,11 @@ if ($role == "user") {
                 $homeUserController->cartDetail();
                 break;
               }
+              case 'cart-delete':{
+                $homeUserController = new HomeUserController();
+                $homeUserController->removeCartItem();
+                break;
+              }
         default:
             // $loginController->restrictUserAccess(); // Restrict access to user
             $homeUserController = new HomeUserController();
