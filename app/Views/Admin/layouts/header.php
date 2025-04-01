@@ -60,23 +60,33 @@
 						<div class="cr-right-tool cr-user-drop">
 							<div class="cr-hover-drop">
 								<div class="cr-hover-tool">
-									<img class="user" src="assets/Admin/img/user/1.jpg" alt="user">
+									<?php if (!empty($_SESSION['users'])): ?>
+										<img class="user" src="assets/Admin/img/user/1.jpg" alt="user">
+									<?php else: ?>
+										<i class="ri-user-line"></i>
+									<?php endif; ?>
 								</div>
 								<div class="cr-hover-drop-panel right">
-									<div class="details">
-										<h6>Wiley Waites</h6>
-										<p>wiley@example.com</p>
-									</div>
-									<ul class="border-top">
-										<li><a href="team-profile.html">Profile</a></li>
-										<li><a href="faq.html">Help</a></li>
-										<li><a href="chatapp.html">Messages</a></li>
-										<li><a href="project-overview.html">Projects</a></li>
-										<li><a href="team-update.html">Settings</a></li>
-									</ul>
-									<ul class="border-top">
-										<li><a href="signin.html"><i class="ri-logout-circle-r-line"></i>Logout</a></li>
-									</ul>
+									<?php if (!empty($_SESSION['users'])): ?>
+										<div class="details">
+											<h6><?= htmlspecialchars($_SESSION['users']['name'] ?? 'User') ?></h6>
+											<p><?= htmlspecialchars($_SESSION['users']['email'] ?? 'user@example.com') ?></p>
+										</div>
+										<ul class="border-top">
+											<li><a href="team-profile.html">Profile</a></li>
+											<li><a href="faq.html">Help</a></li>
+											<li><a href="chatapp.html">Messages</a></li>
+											<li><a href="project-overview.html">Projects</a></li>
+											<li><a href="team-update.html">Settings</a></li>
+										</ul>
+										<ul class="border-top">
+											<li><a href="?role=admin&act=login"><i class="ri-logout-circle-r-line"></i>Logout</a></li>
+										</ul>
+									<?php else: ?>
+										<ul class="border-top">
+											<li><a href="<?= BASE_URL ?>?act=login"><i class="ri-login-circle-line"></i>Login</a></li>
+										</ul>
+									<?php endif; ?>
 								</div>
 							</div>
 						</div>
