@@ -50,6 +50,10 @@ if ($role == "user") {
             $loginController->login();
             break;
         }
+        case 'logout': {
+            $loginController->logout();
+            break;
+        }
 
         case 'adminaccessadminaccess': {
             $loginController->restrictAdminAccess();

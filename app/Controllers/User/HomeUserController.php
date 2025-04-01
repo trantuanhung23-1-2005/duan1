@@ -22,6 +22,10 @@ public function categoryList(){
   include 'app/Views/User/CategoryList.php'; 
 }
  public function cartDetail(){
+  $users_id = $_SESSION['users_id'] ?? null; // Lấy users_id nếu tồn tại, nếu không thì null
+  if (!$users_id) {
+    die("Bạn cần đăng nhập để thực hiện hành động này!");
+  }
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $quantity = isset($_POST['quantity']) ? (int)$_POST['quantity'] : 1;
 

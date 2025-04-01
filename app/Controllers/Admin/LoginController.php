@@ -44,7 +44,7 @@ class LoginController {
             session_destroy(); // Destroy the session
         }
         // Avoid starting a new session immediately after destroying the old one
-        header("Location: " . BASE_URL . "?role=admin&act=login&message=logout_success"); // Redirect with a query parameter
+        header("Location: " . BASE_URL . ""); // Redirect with a query parameter
         exit();
     }
 
