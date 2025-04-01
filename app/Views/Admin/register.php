@@ -14,23 +14,23 @@
 	<title>Carrot - Admin.</title>
 
 	<!-- App favicon -->
-	<link rel="shortcut icon" href="assets/img/favicon/favicon.ico">
+	<link rel="shortcut icon" href="assets/Admin/img/favicon/favicon.ico">
 
 	<!-- Icon CSS -->
-	<link href="assets/css/admin/materialdesignicons.min.css" rel="stylesheet">
-	<link href="assets/css/admin/remixicon.css" rel="stylesheet">
+	<link href="assets/Admin/css/materialdesignicons.min.css" rel="stylesheet">
+	<link href="assets/Admin/css/remixicon.css" rel="stylesheet">
 
 	<!-- Vendor CSS -->
-	<link href='assets/css/admin/datatables.bootstrap5.min.css' rel='stylesheet'>
-	<link href='assets/css/admin/responsive.datatables.min.css' rel='stylesheet'>
-	<link href='assets/css/admin/daterangepicker.css' rel='stylesheet'>
-	<link href="assets/css/admin/simplebar.css" rel="stylesheet">
-	<link href="assets/css/admin/bootstrap.min.css" rel="stylesheet">
-	<link href="assets/css/admin/apexcharts.css" rel="stylesheet">
-	<link href="assets/css/admin/jquery-jvectormap-1.2.2.css" rel="stylesheet">
+	<link href='assets/Admin/css/datatables.bootstrap5.min.css' rel='stylesheet'>
+	<link href='assets/Admin/css/responsive.datatables.min.css' rel='stylesheet'>
+	<link href='assets/Admin/css/daterangepicker.css' rel='stylesheet'>
+	<link href="assets/Admin/css/simplebar.css" rel="stylesheet">
+	<link href="assets/Admin/css/bootstrap.min.css" rel="stylesheet">
+	<link href="assets/Admin/css/apexcharts.css" rel="stylesheet">
+	<link href="assets/Admin/css/jquery-jvectormap-1.2.2.css" rel="stylesheet">
 
 	<!-- Main CSS -->
-	<link id="main-css" href="assets/css/style.css" rel="stylesheet">
+	<link id="main-css" href="assets/Admin/css/style.css" rel="stylesheet">
 
 </head>
 
@@ -64,7 +64,7 @@
 										<form class="signup-form" action="<?php echo BASE_URL; ?>?role=admin&act=postRegister" method="POST">
 											<input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token']); ?>">
 											<div class="imgcontainer">
-												<a href="index.html"><img src="assets/img/logo/full-logo.png" alt="logo" class="logo"></a>
+												<a href="index.html"><img src="assets/Admin/img/logo/full-logo.png" alt="logo" class="logo"></a>
 											</div>
 											<div class="input-control">
 												<div class="row p-l-5 p-r-5">
@@ -151,25 +151,25 @@
 	</main>
 
 	<!-- Vendor Custom -->
-	<script src="assets/js/admin/jquery-3.6.4.min.js"></script>
-	<script src="assets/js/admin/simplebar.min.js"></script>
-	<script src="assets/js/admin/bootstrap.bundle.min.js"></script>
-	<script src="assets/js/admin/apexcharts.min.js"></script>
-	<script src="assets/js/admin/jquery-jvectormap-1.2.2.min.js"></script>
-	<script src="assets/js/admin/jquery-jvectormap-world-mill-en.js"></script>
+	<script src="assets/Admin/js/jquery-3.6.4.min.js"></script>
+	<script src="assets/Admin/js/simplebar.min.js"></script>
+	<script src="assets/Admin/js/bootstrap.bundle.min.js"></script>
+	<script src="assets/Admin/js/apexcharts.min.js"></script>
+	<script src="assets/Admin/js/jquery-jvectormap-1.2.2.min.js"></script>
+	<script src="assets/Admin/js/jquery-jvectormap-world-mill-en.js"></script>
 	<!-- Data Tables -->
-	<script src='assets/js/admin/jquery.datatables.min.js'></script>
-	<script src='assets/js/admin/datatables.bootstrap5.min.js'></script>
-	<script src='assets/js/admin/datatables.responsive.min.js'></script>
+	<script src='assets/Admin/js/jquery.datatables.min.js'></script>
+	<script src='assets/Admin/js/datatables.bootstrap5.min.js'></script>
+	<script src='assets/Admin/js/datatables.responsive.min.js'></script>
 	<!-- Calendar -->
-	<script src="assets/js/admin/jquery.simple-calendar.js"></script>
+	<script src="assets/Admin/js/jquery.simple-calendar.js"></script>
 	<!-- Date Range Picker -->
-	<script src="assets/js/admin/moment.min.js"></script>
-	<script src="assets/js/admin/daterangepicker.js"></script>
-	<script src="assets/js/admin/date-range.js"></script>
+	<script src="assets/Admin/js/moment.min.js"></script>
+	<script src="assets/Admin/js/daterangepicker.js"></script>
+	<script src="assets/Admin/js/date-range.js"></script>
 
 	<!-- Main Custom -->
-	<script src="assets/js/main.js"></script>
+	<script src="assets/Admin/js/main.js"></script>
 </body>
 
 

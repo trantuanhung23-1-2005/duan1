@@ -30,7 +30,8 @@ class LoginController {
                 header("Location: " . BASE_URL . "?role=user&act=dashboard");
             }
             exit();
-        } else {
+        } 
+        else {
             $_SESSION['error'] = "Invalid email or password.";
             header("Location: " . BASE_URL . "?role=admin&act=login");
             exit();
@@ -62,12 +63,12 @@ class LoginController {
         }
     }
 
-    public function restrictUserAccess() {
-        if (!isset($_SESSION['users']) || $_SESSION['users']['role'] != 2) {
-            $_SESSION['error'] = "You must be logged in as a user to access this page.";
-            header("Location: " . BASE_URL . "?role=admin&act=login");
-            exit();
-        }
-    }
+    // public function restrictUserAccess() {
+    //     if (!isset($_SESSION['users']) || $_SESSION['users']['role'] != 2) {
+    //         $_SESSION['error'] = "You must be logged in as a user to access this page.";
+    //         header("Location: " . BASE_URL . "?role=admin&act=login");
+    //         exit();
+    //     }
+    // }
 }
 ?>

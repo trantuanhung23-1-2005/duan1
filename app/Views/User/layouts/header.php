@@ -41,9 +41,9 @@
                                         <span>Account</span>
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="<?= BASE_URL ?>?act=register">Register</a></li>
-                                        <li><a class="dropdown-item" href="<?= BASE_URL ?>?act=checkout">Checkout</a></li>
-                                        <li><a class="dropdown-item" href="<?= BASE_URL ?>?act=login">Login</a></li>
+                                        <li><a class="dropdown-item" href="<?= BASE_URL ?>?role=admin&act=register">Register</a></li>
+                                        <li><a class="dropdown-item" href="">Checkout</a></li>
+                                        <li><a class="dropdown-item" href="<?= BASE_URL ?>?role&act=login">Login</a></li>
                                     </ul>
                                 </li>
                             <?php endif; ?>
@@ -71,13 +71,13 @@
                                     </a>
                                     <ul class="dropdown-menu">
                                         <li>
-                                            <a class="dropdown-item" href="register.html">Register</a>
+                                            <a class="dropdown-item" href="<?=BASE_URL?>?role=admin&act=register">Register</a>
                                         </li>
                                         <li>
                                             <a class="dropdown-item" href="checkout.html">Checkout</a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="login.html">Login</a>
+                                            <a class="dropdown-item" href="<?=BASE_URL?>?role=admin&act=login">Login</a>
                                         </li>
                                     </ul>
                                 </li>
