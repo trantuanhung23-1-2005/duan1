@@ -48,78 +48,6 @@
 
    <?php include 'app/Views/User/layouts/header.php' ?>
 
-    <!-- Mobile menu -->
-    <div class="cr-sidebar-overlay"></div>
-    <div id="cr_mobile_menu" class="cr-side-cart cr-mobile-menu">
-        <div class="cr-menu-title">
-            <span class="menu-title">My Menu</span>
-            <button type="button" class="cr-close">×</button>
-        </div>
-        <div class="cr-menu-inner">
-            <div class="cr-menu-content">
-                <ul>
-                    <li class="dropdown drop-list">
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li class="dropdown drop-list">
-                        <span class="menu-toggle"></span>
-                        <a href="javascript:void(0)" class="dropdown-list">Category</a>
-                        <ul class="sub-menu">
-                            <li><a href="shop-left-sidebar.html">Shop Left sidebar</a></li>
-                            <li><a href="shop-right-sidebar.html">Shop Right sidebar</a></li>
-                            <li><a href="shop-full-width.html">Full Width</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown drop-list">
-                        <span class="menu-toggle"></span>
-                        <a href="javascript:void(0)" class="dropdown-list">product</a>
-                        <ul class="sub-menu">
-                            <li><a href="product-left-sidebar.html">product Left sidebar</a></li>
-                            <li><a href="product-right-sidebar.html">product Right sidebar</a></li>
-                            <li><a href="product-full-width.html">Product Full Width </a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown drop-list">
-                        <span class="menu-toggle"></span>
-                        <a href="javascript:void(0)" class="dropdown-list">Pages</a>
-                        <ul class="sub-menu">
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="contact-us.html">Contact Us</a></li>
-                            <li><a href="cart.html">Cart</a></li>
-                            <li><a href="checkout.html">Checkout</a></li>
-                            <li><a href="track-order.html">Track Order</a></li>
-                            <li><a href="wishlist.html">Wishlist Hugn</a></li>
-                            <li><a href="faq.html">Faq</a></li>
-                            <li><a href="login.html">Login</a></li>
-                            <li><a href="register.html">Register</a></li>
-                            <li><a href="policy.html">Policy</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown drop-list">
-                        <span class="menu-toggle"></span>
-                        <a href="javascript:void(0)" class="dropdown-list">Blog</a>
-                        <ul class="sub-menu">
-                            <li><a href="blog-left-sidebar.html">Left Sidebar</a></li>
-                            <li><a href="blog-right-sidebar.html">Right Sidebar</a></li>
-                            <li><a href="blog-full-width.html">Full Width</a></li>
-                            <li><a href="blog-detail-left-sidebar.html">Detail Left Sidebar</a></li>
-                            <li><a href="blog-detail-right-sidebar.html">Detail Right Sidebar</a></li>
-                            <li><a href="blog-detail-full-width.html">Detail Full Width</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown drop-list">
-                        <span class="menu-toggle"></span>
-                        <a href="javascript:void(0)">Element</a>
-                        <ul class="sub-menu">
-                            <li><a href="elements-products.html">Products</a></li>
-                            <li><a href="elements-typography.html">Typography</a></li>
-                            <li><a href="elements-buttons.html">Buttons</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
 
     <!-- Hero slider -->
     <section class="section-hero padding-b-100 next">
@@ -183,10 +111,6 @@
                         <div class="cr-banner">
                             <h2>Popular Products</h2>
                         </div>
-                        <div class="cr-banner-sub-title">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore lacus vel facilisis. </p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -228,7 +152,7 @@
                                 </div>
                                 <div class="cr-product-details">
                                     <div class="cr-brand">
-                                        <a href="shop-left-sidebar.html"><?= htmlspecialchars($value->name); ?></a>
+                                        <a href="<?=BASE_URL?>?act=product-detail&product_id=<?=$value->id?>"><?= htmlspecialchars($value->name); ?></a>
                                         <div class="cr-star">
                                             <i class="ri-star-fill"></i>
                                             <i class="ri-star-fill"></i>
@@ -273,69 +197,6 @@
     </a>
 
     <!-- Model -->
-    <div class="modal fade quickview-modal" id="quickview" aria-hidden="true" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered cr-modal-dialog">
-            <div class="modal-content">
-                <button type="button" class="cr-close-model btn-close" data-bs-dismiss="modal"
-                    aria-label="Close"></button>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-5 col-sm-12 col-xs-12">
-                            <div class="zoom-image-hover modal-border-image">
-                                <img src="assets/User/img/product/tab-1.jpg" alt="product-tab-2" class="product-image">
-                            </div>
-                        </div>
-                        <div class="col-md-7 col-sm-12 col-xs-12">
-                            <div class="cr-size-and-weight-contain">
-                                <h2 class="heading">Peach Seeds Of Change Oraganic Quinoa, Brown fruit</h2>
-                                <p>Lorem Ipsum is simply dummy text of the printing and
-                                    typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
-                                    since the 1900s,</p>
-                            </div>
-                            <div class="cr-size-and-weight">
-                                <div class="cr-review-star">
-                                    <div class="cr-star">
-                                        <i class="ri-star-fill"></i>
-                                        <i class="ri-star-fill"></i>
-                                        <i class="ri-star-fill"></i>
-                                        <i class="ri-star-fill"></i>
-                                        <i class="ri-star-fill"></i>
-                                    </div>
-                                    <p>( 75 Review )</p>
-                                </div>
-                                <div class="cr-product-price">
-                                    <span class="new-price">$120.25</span>
-                                    <span class="old-price">$123.25</span>
-                                </div>
-                                <div class="cr-size-weight">
-                                    <h5><span>Size</span>/<span>Weight</span> :</h5>
-                                    <div class="cr-kg">
-                                        <ul>
-                                            <li class="active-color">500gm</li>
-                                            <li>1kg</li>
-                                            <li>2kg</li>
-                                            <li>5kg</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="cr-add-card">
-                                    <div class="cr-qty-main">
-                                        <input type="text" placeholder="." value="1" minlength="1" maxlength="20"
-                                            class="quantity">
-                                        <button type="button" id="add_model" class="plus">+</button>
-                                        <button type="button" id="sub_model" class="minus">-</button>
-                                    </div>
-                                    <div class="cr-add-button">
-                                        <button type="button" class="cr-button">Add to cart</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Cart -->
     

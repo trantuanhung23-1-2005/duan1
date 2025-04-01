@@ -92,52 +92,30 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="index.html">
+                                    <a class="nav-link" href="<?=BASE_URL?>?act=''">
                                         Home
                                     </a>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="javascript:void(0)">
+                                    <a class="nav-link dropdown-toggle" href="<?=BASE_URL?>?act=category_list">
                                         Category
                                     </a>
                                     <ul class="dropdown-menu">
                                         <li>
-                                            <a class="dropdown-item" href="shop-left-sidebar.html">Shop Left
-                                                sidebar</a>
+                                            <a class="dropdown-item" href="<?=BASE_URL?>?act=category_list">Vegetable</a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="shop-right-sidebar.html">Shop
-                                                Right
-                                                sidebar</a>
+                                            <a class="dropdown-item" href="<?=BASE_URL?>?act=category_list">Fruit</a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="shop-full-width.html">Full
-                                                Width</a>
+                                            <a class="dropdown-item" href="<?=BASE_URL?>?act=category_list">Flower</a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="javascript:void(0)">
+                                    <a class="nav-link dropdown-toggle" href="<?= BASE_URL ?>?act=product-list-user">
                                         Products
                                     </a>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <a class="dropdown-item" href="product-left-sidebar.html">product
-                                                Left
-                                                sidebar </a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="product-right-sidebar.html">product
-                                                Right
-                                                sidebar </a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="product-full-width.html">Product
-                                                Full
-                                                Width
-                                            </a>
-                                        </li>
-                                    </ul>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="javascript:void(0)">

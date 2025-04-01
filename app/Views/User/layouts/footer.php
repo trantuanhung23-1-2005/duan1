@@ -15,7 +15,7 @@
                         </h4>
                         <ul class="cr-footer-links cr-footer-dropdown">
                             <li class="location-icon">
-                                FPOLY Trịnh Văn Bô
+                                FPOLY Trinh Van Bo
                             </li>
                             <li class="mail-icon">
                                 <a href="javascript:void(0)">123@gmail.com</a>
@@ -49,12 +49,10 @@
                             <span class="cr-heading-res"></span>
                         </h4>
                         <ul class="cr-footer-links cr-footer-dropdown">
-                            <li><a href="shop-left-sidebar.html">Dairy & Bakery</a></li>
-                            <li><a href="shop-left-sidebar.html">Fruits & Vegetable</a></li>
-                            <li><a href="shop-left-sidebar.html">Snack & Spice</a></li>
-                            <li><a href="shop-left-sidebar.html">Juice & Drinks</a></li>
-                            <li><a href="shop-left-sidebar.html">Chicken & Meat</a></li>
-                            <li><a href="shop-left-sidebar.html">Fast Food</a></li>
+                            <li><a href="shop-left-sidebar.html">Vegetable</a></li>
+                            <li><a href="shop-left-sidebar.html">Fruits</a></li>
+                            <li><a href="shop-left-sidebar.html">Flower</a></li>
+                            
                         </ul>
                     </div>
                 </div>
