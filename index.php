@@ -7,12 +7,19 @@ include 'app/Database/database.php';
 include 'app/Models/Admin/ProductModelAdmin.php';
 include 'app/Models/Admin/CategoryModel.php';
 include 'app/Models/User/DashboardUser.php';
+include 'app/Models/Admin/UserModel.php';
+include 'app/Models/Admin/HomeModel.php';
+
+
 
 
 //Controllers
 include 'app/Controllers/User/HomeUserController.php';
 include 'app/Controllers/Admin/HomeAdminController.php';
 include 'app/Controllers/Admin/CategoryController.php';
+include 'app/Controllers/Admin/UserAdminController.php';
+include 'app/Controllers/Admin/LoginController.php';
+require_once 'app/Controllers/Admin/RegisterController.php';
 
 
 
