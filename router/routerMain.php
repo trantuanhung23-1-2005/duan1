@@ -35,6 +35,11 @@ if ($role == "user") {
                 $homeUserController->removeCartItem();
                 break;
               }
+              case 'check-out':{
+                $homeUserController = new HomeUserController();
+                $homeUserController->checkOut();
+                break;
+              }
         default:
             // $loginController->restrictUserAccess(); // Restrict access to user
             $homeUserController = new HomeUserController();

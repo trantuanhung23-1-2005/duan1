@@ -22,9 +22,6 @@ public function categoryList(){
   include 'app/Views/User/CategoryList.php'; 
 }
 public function cartDetail() {
-  if ($_SERVER["REQUEST_METHOD"] == "POST") {
-      $quantity = isset($_POST['quantity']) ? (int)$_POST['quantity'] : null;
-  }
   $users_id = $_SESSION['users']['id'] ?? null;
   if (!$users_id) {
       die("Bạn chưa đăng nhập!");
@@ -80,6 +77,9 @@ public function removeCartItem() {
   // Chuyển hướng về giỏ hàng
   header("Location: " . BASE_URL . "?act=cart");
   exit;
+}
+public function checkOut(){
+  include 'app/Views/User/CheckOut.php';
 }
 
 }

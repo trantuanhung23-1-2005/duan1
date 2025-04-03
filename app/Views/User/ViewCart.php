@@ -103,7 +103,7 @@
                                     <div class="col-lg-12">
                                         <div class="cr-cart-update-bottom">
                                             <a href="<?=BASE_URL?>?act=product-list-user" class="cr-links">Continue Shopping</a>
-                                            <a href="cart.html" class="cr-button">
+                                            <a href="<?=BASE_URL?>?act=check-out" class="cr-button">
                                                 Check Out
                                             </a>
                                         </div>
