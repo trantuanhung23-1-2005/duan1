@@ -1,82 +1,56 @@
-<!-- ========================================================= 
-    Item Name: Carrot - Multipurpose eCommerce HTML Template.
-    Author: ashishmaraviya
-    Version: 2.1
-    Copyright 2024
- ============================================================-->
- <!DOCTYPE html>
-<html lang="en" dir="ltr">
-
-
-<!-- Mirrored from maraviyainfotech.com/projects/carrot/carrot-v21/carrot-html/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Nov 2024 15:29:37 GMT -->
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="ecommerce, market, shop, mart, cart, deal, multipurpose, marketplace">
-    <meta name="description" content="Carrot - Multipurpose eCommerce HTML Template.">
-    <meta name="author" content="ashishmaraviya">
-
-    <title>Healthy</title>
-
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/User/img/logo/favicon.png">
-
-    <!-- Icon CSS -->
-    <link rel="stylesheet" href="assets/User/css/vendor/materialdesignicons.min.css">
-    <link rel="stylesheet" href="assets/User/css/vendor/remixicon.css">
-
-    <!-- Vendor -->
-    <link rel="stylesheet" href="assets/User/css/vendor/animate.css">
-    <link rel="stylesheet" href="assets/User/css/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/User/css/vendor/aos.min.css">
-    <link rel="stylesheet" href="assets/User/css/vendor/range-slider.css">
-    <link rel="stylesheet" href="assets/User/css/vendor/swiper-bundle.min.css">
-    <link rel="stylesheet" href="assets/User/css/vendor/jquery.slick.css">
-    <link rel="stylesheet" href="assets/User/css/vendor/slick-theme.css">
-
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="assets/User/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
 </head>
+<body>
+    <h1>Thông tin thanh toán</h1>
+    <form action="?role=user&act=create-order" method="POST">
+        <label for="name">Tên người nhận:</label>
+        <input type="text" id="name" name="name" required><br><br>
 
-<body class="body-bg-6">
+        <label for="address">Địa chỉ:</label>
+        <input type="text" id="address" name="address" required><br><br>
 
-    <!-- Loader -->
-    <div id="cr-overlay">
-        <span class="loader"></span>
-    </div>
+        <label for="phone">Số điện thoại:</label>
+        <input type="text" id="phone" name="phone" required><br><br>
 
-   <?php include 'app/Views/User/layouts/header.php' ?>
+        <label for="notes">Ghi chú:</label>
+        <textarea id="notes" name="notes"></textarea><br><br>
 
-    <!-- Main -->
-    
-    
-
-    <!-- Footer -->
-    <?php include 'app/Views/User/layouts/footer.php' ?>
-
-
-    <!-- Cart -->
-    
-
-    <!-- Side-tool -->
-    
-
-    <!-- Vendor Custom -->
-    <script src="assets/User/js/vendor/jquery-3.6.4.min.js"></script>
-    <script src="assets/User/js/vendor/jquery.zoom.min.js"></script>
-    <script src="assets/User/js/vendor/bootstrap.bundle.min.js"></script>
-    <script src="assets/User/js/vendor/mixitup.min.js"></script>
-
-    <script src="assets/User/js/vendor/range-slider.js"></script>
-    <script src="assets/User/js/vendor/aos.min.js"></script>
-    <script src="assets/User/js/vendor/swiper-bundle.min.js"></script>
-    <script src="assets/User/js/vendor/slick.min.js"></script>
-
-    <!-- Main Custom -->
-    <script src="assets/User/js/main.js"></script>
+        <h2>Chi tiết giỏ hàng</h2>
+        <table border="1" cellpadding="10" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Sản phẩm</th>
+                    <th>Hình ảnh</th>
+                    <th>Số lượng</th>
+                    <th>Giá</th>
+                    <th>Tổng</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php if (!empty($cartDetails)): ?>
+                    <?php foreach ($cartDetails as $item): ?>
+                        <tr>
+                            <td><?= htmlspecialchars($item['name']) ?></td>
+                            <td><img src="<?= htmlspecialchars($item['image']) ?>" alt="<?= htmlspecialchars($item['name']) ?>" width="50"></td>
+                            <td><?= htmlspecialchars($item['quantity']) ?></td>
+                            <td><?= number_format($item['price'], 0, ',', '.') ?> VND</td>
+                            <td><?= number_format($item['price'] * $item['quantity'], 0, ',', '.') ?> VND</td>
+                        </tr>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <tr>
+                        <td colspan="5">Giỏ hàng của bạn đang trống.</td>
+                    </tr>
+                <?php endif; ?>
+            </tbody>
+        </table>
+        <br>
+        <button type="submit">Đặt hàng</button>
+    </form>
 </body>
-
-
-<!-- Mirrored from maraviyainfotech.com/projects/carrot/carrot-v21/carrot-html/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Nov 2024 15:30:08 GMT -->
 </html>

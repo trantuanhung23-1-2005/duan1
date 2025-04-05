@@ -10,11 +10,11 @@ if ($role == "user") {
             $homeUserController = new HomeUserController();
             $homeUserController->homeUser();
             break;
-            case 'product-detail':{
+            case 'product-detail': {
                 $homeUserController = new HomeUserController();
                 $homeUserController->productDetail();
                 break;
-              }
+            }
               case 'product-list-user':{
                 $homeUserController = new HomeUserController();
                 $homeUserController->productListUser();
@@ -40,6 +40,34 @@ if ($role == "user") {
                 $homeUserController->checkOut();
                 break;
               }
+              case 'add-review': {
+                $homeUserController = new HomeUserController();
+                $homeUserController->addReview();
+                break;
+            }
+            case 'create-order': {
+                $orderController = new OrderController();
+                $orderController->createOrder();
+                break;
+            }
+    
+            case 'list-orders': {
+                $orderController = new OrderController();
+                $orderController->listOrders();
+                break;
+            }
+    
+            case 'view-order-details': {
+                $orderController = new OrderController();
+                $orderController->viewOrderDetails();
+                break;
+            }
+    
+            case 'cancel-order': {
+                $orderController = new OrderController();
+                $orderController->cancelOrder();
+                break;
+            }
         default:
             // $loginController->restrictUserAccess(); // Restrict access to user
             $homeUserController = new HomeUserController();
@@ -199,7 +227,45 @@ if ($role == "user") {
             $registerController->postRegister();
             break;
         }
+        case 'list-reviews': {
+            $loginController->restrictAdminAccess(); // Đảm bảo chỉ admin có quyền truy cập
+            $reviewAdminController = new ReviewAdminController();
+            $reviewAdminController->listReviews();
+            break;
+        }
+        
+        case 'delete-review': {
+            $loginController->restrictAdminAccess(); // Đảm bảo chỉ admin có quyền truy cập
+            $reviewAdminController = new ReviewAdminController();
+            $reviewAdminController->deleteReview();
+            break;
+        }
+        case 'list-orders': {
+            $loginController->restrictAdminAccess();
+            $orderController = new OrderController();
+            $orderController->listOrdersAdmin();
+            break;
+        }
 
+        case 'view-order_details': {
+            $loginController->restrictAdminAccess();
+            $orderController = new OrderController();
+            $orderController->viewOrderDetails();
+            break;
+        }
+
+        case 'cancel-order': {
+            $loginController->restrictAdminAccess();
+            $orderController = new OrderController();
+            $orderController->cancelOrder();
+            break;
+        }
+        case 'update-order-status': {
+            $loginController->restrictAdminAccess();
+            $orderController = new OrderController();
+            $orderController->updateOrderStatus();
+            break;
+        }
         default:
             $loginController->restrictAdminAccess(); // Restrict access to admin
             $homeAdminController = new HomeAdminController();
