@@ -47,7 +47,7 @@
 										<!-- Login form -->
 										  <form action="<?= BASE_URL ?>?role=admin&act=post-login" method="post" enctype="multipart/form-data" class="row g-3">
 											<div class="imgcontainer">
-												<a href="index.html"><img src="assets/Admin/img/logo/full-logo.png" alt="logo" class="logo"></a>
+												<a href="index.html"><img src="assets/User/img/logo/full-logo.png" alt="logo" class="logo"></a>
 											</div>
 											 <?php if (isset($_SESSION['success'])): ?>
                                                 <div class="alert alert-success"><?php echo htmlspecialchars($_SESSION['success']); unset($_SESSION['success']); ?></div>
