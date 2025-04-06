@@ -33,6 +33,15 @@
 											class="ri-checkbox-blank-circle-line"></i>Category Add</a></li>
 							</ul>
 						</li>
+						<li class="cr-sb-item sb-drop-item">
+							<a href="javascript:void(0)" class="cr-drop-toggle">
+								<i class="ri-pages-line"></i><span class="condense">Order<i
+										class="drop-arrow ri-arrow-down-s-line"></i></span></a>
+							<ul class="cr-sb-drop condense">
+								<li><a href="<?= BASE_URL ?>?role=admin&act=list-orders" class="cr-page-link drop"><i
+											class="ri-checkbox-blank-circle-line"></i></i>Order List</a></li>
+							</ul>
+						</li>
 						<li class="cr-sb-item-separator"></li>
 						<li class="cr-sb-title condense">Pages</li>
 						<li class="cr-sb-item sb-drop-item">
