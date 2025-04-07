@@ -8,7 +8,7 @@
 				<div class="cr-sb-content">
 					<ul class="cr-sb-list">
 						<li class="cr-sb-item sb-drop-item">
-							<a href="javascript:void(0)" class="cr-drop-toggle">
+							<a href="<?=BASE_URL?>?role=admin" class="cr-drop-toggle">
 								<i class="ri-dashboard-3-line"></i><span class="condense">Dashboard<i></i></span></a>
 						</li>
 						<li class="cr-sb-item sb-drop-item">
@@ -40,6 +40,15 @@
 							<ul class="cr-sb-drop condense">
 								<li><a href="<?= BASE_URL ?>?role=admin&act=list-orders" class="cr-page-link drop"><i
 											class="ri-checkbox-blank-circle-line"></i></i>Order List</a></li>
+							</ul>
+						</li>
+						<li class="cr-sb-item sb-drop-item">
+							<a href="javascript:void(0)" class="cr-drop-toggle">
+								<i class="ri-pages-line"></i><span class="condense">Review<i
+										class="drop-arrow ri-arrow-down-s-line"></i></span></a>
+							<ul class="cr-sb-drop condense">
+								<li><a href="<?= BASE_URL ?>?role=admin&act=list-reviews" class="cr-page-link drop"><i
+											class="ri-checkbox-blank-circle-line"></i></i>List Review</a></li>
 							</ul>
 						</li>
 						<li class="cr-sb-item-separator"></li>

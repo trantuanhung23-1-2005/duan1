@@ -48,9 +48,9 @@
                                 </li>
                             <?php endif; ?>
                         </ul>
-                        <a href="javascript:void(0)" class="cr-right-bar-item Shopping-toggle">
+                        <a href="<?=BASE_URL?>?act=list-orders" style="padding:10px">
                             <i class="ri-shopping-cart-line"></i>
-                            <span>Cart</span>
+                            <span>Order</span>
                         </a>
                     </div>
                 </div>
