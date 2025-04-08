@@ -15,6 +15,7 @@ class LoginController {
         $homeModel = new HomeModel();
         $dataUsers = $homeModel->checkLogin($email);
 
+        // Verify the password using password_verify
         if ($dataUsers && password_verify($password, $dataUsers->password)) {
             $_SESSION['users'] = [
                 'id' => $dataUsers->id,
@@ -22,7 +23,7 @@ class LoginController {
                 'email' => $dataUsers->email,
                 'role' => $dataUsers->role
             ];
-            $_SESSION['success'] = "Welcome, ". "! You have successfully logout in.";
+            $_SESSION['success'] = "Welcome, " . $dataUsers->name . "! You have successfully logged in.";
 
             if ($dataUsers->role == 1) {
                 header("Location: " . BASE_URL . "?role=admin&act=dashboard");
@@ -30,8 +31,7 @@ class LoginController {
                 header("Location: " . BASE_URL . "?role=user&act=dashboard");
             }
             exit();
-        } 
-        else {
+        } else {
             $_SESSION['error'] = "Invalid email or password.";
             header("Location: " . BASE_URL . "?role=admin&act=login");
             exit();

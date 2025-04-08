@@ -11,8 +11,8 @@ class UserModelAdmin {
         try {
             $query = "SELECT id, name, email, 
                       CASE WHEN role = '1' THEN 'admin' ELSE 'user' END AS role, 
-                      gender 
-                      FROM users";
+                      gender, phone 
+                      FROM users"; // Include phone in the query
             $stmt = $this->db->pdo->prepare($query);
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_OBJ);
@@ -23,7 +23,7 @@ class UserModelAdmin {
     }
 
     // 🟢 Thêm user mới
-    public function addUserToDB($name, $email, $password, $role, $gender) {
+    public function addUserToDB($name, $email, $password, $role, $gender, $phone) {
         try {
             // Chuyển role thành '1' hoặc '2'
             $roleValue = ($role === 'admin') ? '1' : '2';
@@ -37,14 +37,15 @@ class UserModelAdmin {
             // Hash password
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-            $query = "INSERT INTO users (name, email, password, role, gender) 
-                      VALUES (:name, :email, :password, :role, :gender)";
+            $query = "INSERT INTO users (name, email, password, role, gender, phone) 
+                      VALUES (:name, :email, :password, :role, :gender, :phone)"; // Add phone to query
             $stmt = $this->db->pdo->prepare($query);
             $stmt->bindParam(":name", $name);
             $stmt->bindParam(":email", $email);
             $stmt->bindParam(":password", $hashedPassword);
             $stmt->bindParam(":role", $roleValue);
             $stmt->bindParam(":gender", $gender);
+            $stmt->bindParam(":phone", $phone); // Bind phone
 
             return $stmt->execute();
         } catch (PDOException $e) {
@@ -58,12 +59,12 @@ class UserModelAdmin {
         try {
             $query = "SELECT id, name, email, 
                       CASE WHEN role = '1' THEN 'admin' ELSE 'user' END AS role, 
-                      gender 
-                      FROM users WHERE id = :id LIMIT 1";  // Giới hạn 1 bản ghi tránh query dư thừa
+                      gender, phone 
+                      FROM users WHERE id = :id LIMIT 1"; // Include phone in query
             $stmt = $this->db->pdo->prepare($query);
             $stmt->bindParam(':id', $id, PDO::PARAM_INT);
             $stmt->execute();
-            return $stmt->fetch(PDO::FETCH_OBJ);  // Trả về dạng object
+            return $stmt->fetch(PDO::FETCH_OBJ); // Return phone with other data
         } catch (PDOException $e) {
             error_log("Lỗi lấy user theo ID: " . $e->getMessage());
             return null;
@@ -71,11 +72,10 @@ class UserModelAdmin {
     }
 
     // 🟢 Cập nhật user (có kiểm tra password)
-    public function updateUserToDB($id, $name, $email, $role, $gender, $password = null) {
+    public function updateUserToDB($id, $name, $email, $role, $gender, $phone, $password = null) {
         try {
             // Kiểm tra ID có tồn tại không
-            $checkQuery = "SELECT id FROM users WHERE id = :id";
-            $checkStmt = $this->db->pdo->prepare($checkQuery);
+            $checkQuery = "SELECT id FROM users WHERE id = :id";$checkStmt = $this->db->pdo->prepare($checkQuery);
             $checkStmt->bindParam(":id", $id, PDO::PARAM_INT);
             $checkStmt->execute();
             $existingUser = $checkStmt->fetch(PDO::FETCH_OBJ);
@@ -89,9 +89,9 @@ class UserModelAdmin {
 
             if ($password) {
                 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-                $query = "UPDATE users SET name = :name, email = :email, password = :password, role = :role, gender = :gender WHERE id = :id";
+                $query = "UPDATE users SET name = :name, email = :email, password = :password, role = :role, gender = :gender, phone = :phone WHERE id = :id";
             } else {
-                $query = "UPDATE users SET name = :name, email = :email, role = :role, gender = :gender WHERE id = :id";
+                $query = "UPDATE users SET name = :name, email = :email, role = :role, gender = :gender, phone = :phone WHERE id = :id";
             }
 
             $stmt = $this->db->pdo->prepare($query);
@@ -99,6 +99,7 @@ class UserModelAdmin {
             $stmt->bindParam(":email", $email);
             $stmt->bindParam(":role", $roleValue);
             $stmt->bindParam(":gender", $gender);
+            $stmt->bindParam(":phone", $phone); // Bind phone
             $stmt->bindParam(":id", $id, PDO::PARAM_INT);
             
             if ($password) {

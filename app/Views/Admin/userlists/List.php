@@ -72,7 +72,7 @@
                             <div class="cr-card-content">
                                  <!-- Kiểm tra và hiển thị thông báo lỗi -->
                                 <?php if (isset($_SESSION['message'])): ?>
-                                    <div class="alert alert-warning">
+                                    <div class="alert alert-success">
                                         <?= $_SESSION['message']; ?>
                                     </div>
                                     <?php unset($_SESSION['message']); ?>
@@ -86,6 +86,7 @@
                                                                                         <th>Email</th>
                                                                                         <th>Role</th>
                                                                                         <th>Gender</th>
+                                                                                        <th>Phone</th> <!-- Ensure Phone column is displayed -->
                                                                                         <th>Actions</th>
                                                                                         
                                                                                     </tr>
@@ -100,6 +101,7 @@
                                                                                     <td><?= htmlspecialchars($user->email ?? '') ?></td>
                                                                                     <td><?= htmlspecialchars($user->role ?? '') ?></td>
                                                                                     <td><?= htmlspecialchars($user->gender ?? '') ?></td>
+                                                                                    <td><?= htmlspecialchars($user->phone ?? '') ?></td> <!-- Display updated phone -->
                                                                                     <td>
                                                                                         <a href="?role=admin&act=list-edit&id=<?= htmlspecialchars($user->id ?? '') ?>" class="btn btn-warning">Edit</a>
                                                                                         <a href="?role=admin&act=list-delete&id=<?= htmlspecialchars($user->id ?? '') ?>" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</a>
@@ -109,7 +111,7 @@
                                                                         <?php endforeach; ?>
                                                                     <?php else: ?>
                                                                         <tr>
-                                                                            <td colspan="6" class="text-center">No users found.</td>
+                                                                            <td colspan="7" class="text-center">No users found.</td> <!-- Update colspan to 7 -->
                                                                         </tr>
                                                                     <?php endif; ?>
                                                                 </tbody>
@@ -128,6 +130,7 @@
 
 		<!-- Feature tools -->
 		
+
 
 	
 		
@@ -160,4 +163,3 @@
 
 <!-- Mirrored from maraviyainfotech.com/projects/carrot/carrot-v21/admin-html/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Nov 2024 15:41:34 GMT -->
 </html>
-

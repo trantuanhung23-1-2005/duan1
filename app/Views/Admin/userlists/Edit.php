@@ -80,7 +80,11 @@
                                         </div>
                                         <div class="col-md-6">
                                             <label for="email" class="form-label">Email</label>
-                                            <input type="email" class="form-control" id="email" name="email" value="<?= htmlspecialchars($user->email ?? '') ?>" placeholder="Email">
+                                            <input type="email" class="form-control" id="email" name="email" value="<?= htmlspecialchars($user->email ?? '') ?>" placeholder="Email" readonly>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="phone" class="form-label">Phone</label>
+                                            <input type="text" class="form-control" id="phone" name="phone" value="<?= htmlspecialchars($user->phone ?? '') ?>" placeholder="Phone (11 digits)" pattern="\d{11}" maxlength="11" required>
                                         </div>
                                         <div class="col-md-6">
                                             <label class="form-label">Vai trò</label>
@@ -148,4 +152,3 @@
 
 <!-- Mirrored from maraviyainfotech.com/projects/carrot/carrot-v21/admin-html/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Nov 2024 15:41:34 GMT -->
 </html>
-

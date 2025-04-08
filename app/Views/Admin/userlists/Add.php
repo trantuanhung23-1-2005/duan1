@@ -110,6 +110,11 @@
                                         </select>
                                     </div>
 
+                                    <div class="col-md-6">
+                                        <label for="phone" class="form-label">Phone:</label>
+                                        <input type="text" id="phone" name="phone" class="form-control" placeholder="Phone (11 digits)" pattern="\d{11}" maxlength="11" required>
+                                    </div>
+
                                     <div class="col-md-12">
                                         <button type="submit" class="btn btn-primary">Add User</button>
                                     </div>

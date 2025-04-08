@@ -92,6 +92,12 @@
 															<small class="text-danger"><?php echo htmlspecialchars($errors['confirm_password']); ?></small>
 														<?php endif; ?>
 													</div>
+													<div class="col-md-6 p-l-10 p-r-10">
+														<input type="text" placeholder="Enter Phone Number" name="phone" required>
+														<?php if (isset($errors['phone'])): ?>
+															<small class="text-danger"><?php echo htmlspecialchars($errors['phone']); ?></small>
+														<?php endif; ?>
+													</div>
 												</div>
 												<label class="label-container">I agree with <a href="#">privacy policy</a>
 													<input type="checkbox" required>

@@ -28,12 +28,13 @@ class HomeModel {
         }
     }
 
-    public function registerUser($name, $email, $password) {
-        $sql = "INSERT INTO users (name, email, password, role) VALUES (:name, :email, :password, 2)";
+    public function registerUser($name, $email, $password, $phone) {
+        $sql = "INSERT INTO users (name, email, password, phone, role) VALUES (:name, :email, :password, :phone, 2)";
         $stmt = $this->db->pdo->prepare($sql);
         $stmt->bindParam(':name', $name);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':password', $password);
+        $stmt->bindParam(':phone', $phone);
 
         try {
             return $stmt->execute(); // Return true if registration is successful

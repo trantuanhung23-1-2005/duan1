@@ -30,7 +30,7 @@
 	<link href="assets/Admin/css/vendor/jquery-jvectormap-1.2.2.css" rel="stylesheet">
 
 	<!-- Main CSS -->
-	<link id="main-css" href="assets/css/style.css" rel="stylesheet">
+	<link id="main-css" href="assets/Admin/css/style.css" rel="stylesheet">
 
 </head>
 
@@ -45,48 +45,55 @@
 								<div class="main-info">
 									<div class="hero-container">
 										<!-- Login form -->
-										  <form action="<?= BASE_URL ?>?role=admin&act=post-login" method="post" enctype="multipart/form-data" class="row g-3">
-											<div class="imgcontainer">
-												<a href="index.html"><img src="assets/User/img/logo/full-logo.png" alt="logo" class="logo"></a>
-											</div>
-											 <?php if (isset($_SESSION['success'])): ?>
-                                                <div class="alert alert-success"><?php echo htmlspecialchars($_SESSION['success']); unset($_SESSION['success']); ?></div>
-                                            <?php endif; ?>
-                                            <?php if (isset($_SESSION['error'])): ?>
-                                                <div class="alert alert-danger"><?php echo htmlspecialchars($_SESSION['error']); unset($_SESSION['error']); ?></div>
-                                            <?php endif; ?>
-                                        <div class="mb-3">
-                                            <label for="email" class="form-label">Email:</label>
-                                            <input type="email" id="email" name="email" class="form-control" required>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="password" class="form-label">Password:</label>
-                                            <input type="password" id="password" name="password" class="form-control" required>
-                                        </div>
-												<div class="login-btns">
-													<button type="submit">Login</button>
-												</div>
-												<div class="division-lines">
-													<p>or login with</p>
-												</div>
-												<div class="login-with-btns">
-													<button type="button" class="google">
-														<i class="ri-google-fill"></i>
-													</button>
-													<button type="button" class="facebook">
-														<i class="ri-facebook-fill"></i>
-													</button>
-													<button type="button" class="twitter">
-														<i class="ri-twitter-fill"></i>
-													</button>
-													<button type="button" class="linkedin">
-														<i class="ri-linkedin-fill"></i>
-													</button>
-													<span class="already-acc">Not a member? <a href="<?= BASE_URL ?>?role=admin&act=register" class="signup-btn">Sign up</a></span>
-															
-												</div>
-											</div>
-										</form>
+										 <form action="<?= BASE_URL ?>?role=admin&act=post-login" method="post" enctype="multipart/form-data" class="row g-3">
+    <div class="col-md-4 offset-md-4">
+        <div class="imgcontainer text-center">
+            <a href="index.html"><img src="assets/Admin/img/logo/full-logo.png" alt="logo" class="logo"></a>
+        </div>
+
+        <!-- Session alerts -->
+        <?php if (isset($_SESSION['success'])): ?>
+            <div class="alert alert-success"><?php echo htmlspecialchars($_SESSION['success']); unset($_SESSION['success']); ?></div>
+        <?php endif; ?>
+        <?php if (isset($_SESSION['error'])): ?>
+            <div class="alert alert-danger"><?php echo htmlspecialchars($_SESSION['error']); unset($_SESSION['error']); ?></div>
+        <?php endif; ?>
+
+        <!-- Input Email -->
+        <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" id="email" name="email" class="form-control" required>
+        </div>
+
+        <!-- Input Password -->
+        <div class="mb-3">
+<label for="password" class="form-label">Password:</label>
+            <input type="password" id="password" name="password" class="form-control" required>
+        </div>
+
+        <!-- Login button -->
+        <div class="login-btns">
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+        </div>
+
+        <!-- Login with -->
+        <div class="division-lines">
+            <p class="text-center">or login with</p>
+        </div>
+
+        <div class="login-with-btns d-flex justify-content-between">
+            <button type="button" class="google btn btn-light"><i class="ri-google-fill"></i></button>
+            <button type="button" class="facebook btn btn-light"><i class="ri-facebook-fill"></i></button>
+            <button type="button" class="twitter btn btn-light"><i class="ri-twitter-fill"></i></button>
+            <button type="button" class="linkedin btn btn-light"><i class="ri-linkedin-fill"></i></button>
+        </div>
+
+        <span class="already-acc d-block text-center mt-3">
+            Not a member? <a href="<?= BASE_URL ?>?role=admin&act=register" class="signup-btn">Sign up</a>
+        </span>
+    </div>
+</form>
+
 									</div>
 								</div>
 							</div>
