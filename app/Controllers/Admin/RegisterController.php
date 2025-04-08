@@ -21,7 +21,7 @@ class RegisterController {
             exit();
         }
 
-        if (!preg_match('/^\d{11}$/', $phone)) {
+        if (!preg_match('/^\d{10}$/', $phone)) {
             $_SESSION['error'] = "Phone number must be 11 digits.";
             header("Location: " . BASE_URL . "?role=admin&act=register");
             exit();

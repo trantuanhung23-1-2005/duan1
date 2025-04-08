@@ -119,7 +119,7 @@ class UserAdminController {
     // Cập nhật thông tin user
     public function editPostUser() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            if (empty($_POST['id']) || empty($_POST['name']) || empty($_POST['email']) || empty($_POST['role']) || empty($_POST['gender']) || empty($_POST['phone']) || !preg_match('/^\d{11}$/', $_POST['phone'])) {
+            if (empty($_POST['id']) || empty($_POST['name']) || empty($_POST['email']) || empty($_POST['role']) || empty($_POST['gender']) || empty($_POST['phone']) || !preg_match('/^\d{10}$/', $_POST['phone'])) {
                 $_SESSION['message'] = "Vui lòng nhập đầy đủ thông tin và số điện thoại hợp lệ!";
                 header("Location: " . BASE_URL . "?role=admin&act=list-edit&id=" . $_POST['id']);
                 exit;

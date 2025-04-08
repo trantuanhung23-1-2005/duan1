@@ -39,9 +39,9 @@
 		<section class="auth-section anim">
 			<div class="cr-login-page">
 				<div class="container-fluid">
-					<div class="row">
-						<div class="offset-lg-6 col-lg-6">
-							<div class="content-detail">
+					<div class="row justify-content-end">
+						<div class="col-lg-6">
+							<div class="content-detail form-shift-right">
 								<div class="main-info">
 									<div class="hero-container">
 										<?php
@@ -67,61 +67,52 @@
 												<a href="index.html"><img src="assets/Admin/img/logo/full-logo.png" alt="logo" class="logo"></a>
 											</div>
 											<div class="input-control">
-												<div class="row p-l-5 p-r-5">
-													<div class="col-md-6 p-l-10 p-r-10">
-														<input type="text" placeholder="Enter Full Name" name="name" required>
+												<div class="row p-3">
+													<div class="col-md-6 mb-3">
+														<input type="text" class="form-control" placeholder="Enter Full Name" name="name" required>
 														<?php if (isset($errors['name'])): ?>
 															<small class="text-danger"><?php echo htmlspecialchars($errors['name']); ?></small>
 														<?php endif; ?>
 													</div>
-													<div class="col-md-6 p-l-10 p-r-10">
-														<input type="email" placeholder="Enter Email" name="email" required>
+													<div class="col-md-6 mb-3">
+														<input type="email" class="form-control" placeholder="Enter Email" name="email" required>
 														<?php if (isset($errors['email'])): ?>
 															<small class="text-danger"><?php echo htmlspecialchars($errors['email']); ?></small>
 														<?php endif; ?>
 													</div>
-													<div class="col-md-6 p-l-10 p-r-10">
-														<input type="password" placeholder="Enter Password" name="password" class="input-checkmark" required>
+													<div class="col-md-6 mb-3">
+														<input type="password" class="form-control" placeholder="Enter Password" name="password" required>
 														<?php if (isset($errors['password'])): ?>
 															<small class="text-danger"><?php echo htmlspecialchars($errors['password']); ?></small>
 														<?php endif; ?>
 													</div>
-													<div class="col-md-6 p-l-10 p-r-10">
-														<input type="password" placeholder="Re-enter Password" name="confirm_password" class="input-checkmark" required>
+													<div class="col-md-6 mb-3">
+														<input type="password" class="form-control" placeholder="Re-enter Password" name="confirm_password" required>
 														<?php if (isset($errors['confirm_password'])): ?>
 															<small class="text-danger"><?php echo htmlspecialchars($errors['confirm_password']); ?></small>
 														<?php endif; ?>
 													</div>
-													<div class="col-md-6 p-l-10 p-r-10">
-														<input type="text" placeholder="Enter Phone Number" name="phone" required>
+													<div class="col-md-6 mb-3">
+														<input type="text" class="form-control" placeholder="Enter Phone Number" name="phone" required>
 														<?php if (isset($errors['phone'])): ?>
 															<small class="text-danger"><?php echo htmlspecialchars($errors['phone']); ?></small>
 														<?php endif; ?>
 													</div>
 												</div>
-												<label class="label-container">I agree with <a href="#">privacy policy</a>
-													<input type="checkbox" required>
-													<span class="checkmark"></span>
+												<label class="form-check-label">
+													<input type="checkbox" class="form-check-input" required> I agree with <a href="#">privacy policy</a>
 												</label>
-												<div class="login-btns">
-													<button type="submit">Sign up</button>
+												<div class="login-btns mt-3">
+													<button type="submit" class="btn btn-primary">Sign up</button>
 												</div>
-												<div class="division-lines">
+												<div class="division-lines mt-3">
 													<p>or signup with</p>
 												</div>
 												<div class="login-with-btns">
-													<button type="button" class="google">
-														<i class="ri-google-fill"></i>
-													</button>
-													<button type="button" class="facebook">
-														<i class="ri-facebook-fill"></i>
-													</button>
-													<button type="button" class="twitter">
-														<i class="ri-twitter-fill"></i>
-													</button>
-													<button type="button" class="linkedin">
-														<i class="ri-linkedin-fill"></i>
-													</button>
+													<button type="button" class="btn btn-light"><i class="ri-google-fill"></i></button>
+													<button type="button" class="btn btn-light"><i class="ri-facebook-fill"></i></button>
+													<button type="button" class="btn btn-light"><i class="ri-twitter-fill"></i></button>
+													<button type="button" class="btn btn-light"><i class="ri-linkedin-fill"></i></button>
 													<span class="already-acc">Already have an account? <a href="<?php echo BASE_URL; ?>?role=admin&act=login" class="login-btn">Login</a></span>
 												</div>
 											</div>

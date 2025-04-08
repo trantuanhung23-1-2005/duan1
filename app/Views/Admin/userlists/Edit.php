@@ -84,7 +84,7 @@
                                         </div>
                                         <div class="col-md-6">
                                             <label for="phone" class="form-label">Phone</label>
-                                            <input type="text" class="form-control" id="phone" name="phone" value="<?= htmlspecialchars($user->phone ?? '') ?>" placeholder="Phone (11 digits)" pattern="\d{11}" maxlength="11" required>
+                                            <input type="text" class="form-control" id="phone" name="phone" value="<?= htmlspecialchars($user->phone ?? '') ?>" placeholder="Phone (10 digits)" pattern="\d{10}" maxlength="10" required>
                                         </div>
                                         <div class="col-md-6">
                                             <label class="form-label">Vai trò</label>

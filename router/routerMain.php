@@ -92,7 +92,6 @@ if ($role == "user") {
             $loginController->logout();
             break;
         }
-
         case 'adminaccessadminaccess': {
             $loginController->restrictAdminAccess();
             $loginController->restrictAdminAccess();

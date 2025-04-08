@@ -30,7 +30,7 @@
                                     </a>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="#">Action</a></li>
-                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><a class="dropdown-item" href="<?= BASE_URL ?>?role=user&act=setting">Setting</a></li>
                                         <li><a class="dropdown-item" href="<?= BASE_URL ?>?role=admin&act=logout">Logout</a></li>
                                     </ul>
                                 </li>
