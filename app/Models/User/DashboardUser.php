@@ -22,7 +22,7 @@ class DashboardUser
     $stmt->execute();
     return $stmt->fetch(PDO::FETCH_OBJ);
   }
-
+  //lấy cart theo user_id
   public function getCartByUserId($user_id)
   {
     $sql = "SELECT * FROM cart WHERE user_id = :user_id LIMIT 1";
@@ -32,6 +32,42 @@ class DashboardUser
     $cart = $stmt->fetch(PDO::FETCH_ASSOC);
 
     return $cart ?: null;
+  }
+  //tạo cart mới 
+  public function createCart($users_id)
+  {
+    $sql = "INSERT INTO cart (user_id) VALUES (:users_id)";
+    $stmt = $this->db->pdo->prepare($sql);
+    $stmt->bindParam(':users_id', $users_id, PDO::PARAM_INT);
+    $stmt->execute();
+    return $this->db->pdo->lastInsertId();
+  }
+  public function getCartDetailByProduct($cart_id, $product_id)
+  {
+    $sql = "SELECT * FROM cart_detail WHERE cart_id = :cart_id AND product_id = :product_id";
+    $stmt = $this->db->pdo->prepare($sql);
+    $stmt->bindParam(':cart_id', $cart_id, PDO::PARAM_INT);
+    $stmt->bindParam(':product_id', $product_id, PDO::PARAM_INT);
+    $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+  }
+  public function updateCartDetailQuantity($cart_id, $product_id, $newQuantity)
+  {
+    $sql = "UPDATE cart_detail SET quantity = :quantity WHERE cart_id = :cart_id AND product_id = :product_id";
+    $stmt = $this->db->pdo->prepare($sql);
+    $stmt->bindParam(':quantity', $newQuantity, PDO::PARAM_INT);
+    $stmt->bindParam(':cart_id', $cart_id, PDO::PARAM_INT);
+    $stmt->bindParam(':product_id', $product_id, PDO::PARAM_INT);
+    $stmt->execute();
+  }
+  public function addCartDetail($cart_id, $product_id, $quantity)
+  {
+    $sql = "INSERT INTO cart_detail (cart_id, product_id, quantity) VALUES (:cart_id, :product_id, :quantity)";
+    $stmt = $this->db->pdo->prepare($sql);
+    $stmt->bindParam(':cart_id', $cart_id, PDO::PARAM_INT);
+    $stmt->bindParam(':product_id', $product_id, PDO::PARAM_INT);
+    $stmt->bindParam(':quantity', $quantity, PDO::PARAM_INT);
+    $stmt->execute();
   }
   public function getReviewsByProduct($product_id) {
     $sql = "SELECT r.*, u.name AS user_name 
@@ -86,42 +122,7 @@ public function deleteReview($review_id) {
     $stmt->bindParam(':review_id', $review_id, PDO::PARAM_INT);
     return $stmt->execute();
 }
-  public function createCart($users_id)
-  {
-    $sql = "INSERT INTO cart (user_id) VALUES (:users_id)";
-    $stmt = $this->db->pdo->prepare($sql);
-    $stmt->bindParam(':users_id', $users_id, PDO::PARAM_INT);
-    $stmt->execute();
-    return $this->db->pdo->lastInsertId();
-  }
-
-  public function getCartDetailByProduct($cart_id, $product_id)
-  {
-    $sql = "SELECT * FROM cart_detail WHERE cart_id = :cart_id AND product_id = :product_id";
-    $stmt = $this->db->pdo->prepare($sql);
-    $stmt->bindParam(':cart_id', $cart_id, PDO::PARAM_INT);
-    $stmt->bindParam(':product_id', $product_id, PDO::PARAM_INT);
-    $stmt->execute();
-    return $stmt->fetch(PDO::FETCH_ASSOC);
-  }
-  public function addCartDetail($cart_id, $product_id, $quantity)
-  {
-    $sql = "INSERT INTO cart_detail (cart_id, product_id, quantity) VALUES (:cart_id, :product_id, :quantity)";
-    $stmt = $this->db->pdo->prepare($sql);
-    $stmt->bindParam(':cart_id', $cart_id, PDO::PARAM_INT);
-    $stmt->bindParam(':product_id', $product_id, PDO::PARAM_INT);
-    $stmt->bindParam(':quantity', $quantity, PDO::PARAM_INT);
-    $stmt->execute();
-  }
-  public function updateCartDetailQuantity($cart_id, $product_id, $newQuantity)
-  {
-    $sql = "UPDATE cart_detail SET quantity = :quantity WHERE cart_id = :cart_id AND product_id = :product_id";
-    $stmt = $this->db->pdo->prepare($sql);
-    $stmt->bindParam(':quantity', $newQuantity, PDO::PARAM_INT);
-    $stmt->bindParam(':cart_id', $cart_id, PDO::PARAM_INT);
-    $stmt->bindParam(':product_id', $product_id, PDO::PARAM_INT);
-    $stmt->execute();
-  }
+  
   public function getCartDetails($cart_id)
   {
     $sql = "SELECT p.image, p.name, p.price, c.quantity, c.product_id

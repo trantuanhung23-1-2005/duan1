@@ -102,7 +102,12 @@
 												</div>
 												<div class="col-md-6">
 													<label class="form-label">Image</label>
-													<input type="file" class="form-control" id="image" name="image" accept="image/*" value="<?= $product->image ?>">
+													<input type="file" class="form-control" id="image" name="image" accept="image/*">
+													<?php if (!empty($product->image)): ?>
+														<div class="mt-2">
+            									<img src="<?= BASE_URL . $product->image ?>" alt="Product Image" style="max-height: 150px;">
+        										</div>
+    											<?php endif; ?>
 												</div>
 												<div class="col-md-12">
 													<label class="form-label">Sort Description</label>
